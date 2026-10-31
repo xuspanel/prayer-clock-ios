@@ -1,0 +1,19 @@
+[Unit]
+Description=Prayer Clock Web & Artifact Host (prayer.xus.me)
+After=network.target
+
+[Service]
+Type=simple
+User=prayer
+Group=prayer
+WorkingDirectory=/srv/prayer
+Environment="PORT=24740"
+Environment="HOST=127.0.0.1"
+Environment="BASE_DIR=/srv/prayer"
+ExecStart=/srv/prayer/prayer_server
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+
